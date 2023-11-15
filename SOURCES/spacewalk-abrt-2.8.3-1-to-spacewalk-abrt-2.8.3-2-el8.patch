@@ -1,0 +1,23 @@
+diff --git a/spacewalk-abrt.spec b/spacewalk-abrt.spec
+index 38238e92d3..75bce26561 100644
+--- a/spacewalk-abrt.spec
++++ b/spacewalk-abrt.spec
+@@ -7,7 +7,7 @@
+ 
+ Name:           spacewalk-abrt
+ Version:        2.8.3
+-Release:        1%{?dist}
++Release:        2%{?dist}
+ Summary:        ABRT plug-in for rhn-check
+ 
+ License:        GPLv2
+@@ -83,6 +83,9 @@ service abrtd restart
+ %endif
+ 
+ %changelog
++* Mon Mar 05 2018 Tomas Kasparek <tkasparek@redhat.com> 2.8.3-2
++- rebuild for rhel8
++
+ * Fri Feb 09 2018 Michael Mraka <michael.mraka@redhat.com> 2.8.3-1
+ - remove install/clean section initial cleanup
+ - removed Group from specfile
