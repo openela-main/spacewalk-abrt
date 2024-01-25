@@ -1,0 +1,29 @@
+diff --git a/spacewalk-abrt.spec b/spacewalk-abrt.spec
+index 75bce26561..14914eba34 100644
+--- a/spacewalk-abrt.spec
++++ b/spacewalk-abrt.spec
+@@ -1,4 +1,4 @@
+-%if 0%{?fedora}
++%if 0%{?fedora} || 0%{?rhel} >= 8
+ %global build_py3   1
+ %global default_py3 1
+ %endif
+@@ -7,7 +7,7 @@
+ 
+ Name:           spacewalk-abrt
+ Version:        2.8.3
+-Release:        2%{?dist}
++Release:        3%{?dist}
+ Summary:        ABRT plug-in for rhn-check
+ 
+ License:        GPLv2
+@@ -83,6 +83,9 @@ service abrtd restart
+ %endif
+ 
+ %changelog
++* Wed Mar 14 2018 Tomas Kasparek <tkasparek@redhat.com> 2.8.3-3
++- build spacewalk-abrt for python3 (tkasparek@redhat.com)
++
+ * Mon Mar 05 2018 Tomas Kasparek <tkasparek@redhat.com> 2.8.3-2
+ - rebuild for rhel8
+ 
